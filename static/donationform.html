@@ -501,20 +501,26 @@ button[type="submit"]:hover {
       <form id="donationForm" style="margin-top: 100px;">
           <!-- Section 1: Donation Amount -->
           <div style="border: 0.5px solid #ccc; padding: 20px; position: relative;">
-              <h2 style="position: absolute; top: -12px; left: 15px; background: white; padding: 0 10px;">Donation Amount</h2>
-              <label>Select Amount </label><br>
-              <input type="radio" id="amount25" name="amount" value="25" required>
-              <label for="amount25">₹125</label><br>
-              <input type="radio" id="amount50" name="amount" value="50">
-              <label for="amount50">₹500</label><br>
-              <input type="radio" id="amount100" name="amount" value="100">
-              <label for="amount100">₹1000</label><br>
-              <input type="radio" id="amount250" name="amount" value="250">
-              <label for="amount250">₹2500</label><br>
-              <input type="radio" id="customAmountRadio" name="amount" value="custom">
-              <label for="customAmountRadio">Custom Amount:</label>
-              <input type="number" id="customAmount" name="customAmount" step="0.01" placeholder="Enter custom amount" disabled>
-          </div>
+            <h2 style="position: absolute; top: -12px; left: 15px; background: white; padding: 0 10px;">Donation Amount</h2>
+            <label>Select Amount</label><br>
+            
+            <input type="radio" id="amount125" name="amount" value="125" required>
+            <label for="amount125">₹125</label><br>
+        
+            <input type="radio" id="amount500" name="amount" value="500">
+            <label for="amount500">₹500</label><br>
+        
+            <input type="radio" id="amount1000" name="amount" value="1000">
+            <label for="amount1000">₹1000</label><br>
+        
+            <input type="radio" id="amount2500" name="amount" value="2500">
+            <label for="amount2500">₹2500</label><br>
+        
+            <input type="radio" id="customAmountRadio" name="amount" value="custom">
+            <label for="customAmountRadio">Custom Amount:</label>
+            <input type="number" id="customAmount" name="customAmount" step="0.01" placeholder="Enter custom amount" disabled>
+        </div>
+        
   
           <!-- Section 2: Donation Type -->
           <h2>Donation Type</h2>
@@ -679,7 +685,7 @@ button[type="submit"]:hover {
   
           <!-- Section 11: Payment Information -->
           <fieldset>
-              <legend>Payment Information</legend>
+              <!-- <legend>Payment Information</legend> -->
               <div class="payment-method">
                   <label>
                       <input type="radio" name="paymentMethod" value="razorpay" checked>

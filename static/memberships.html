@@ -909,78 +909,61 @@ legend {
 
       <section style="padding: 30px;" id="membership_form">
         <div class="form-container">
-            <h1 style="color: #333;">Membership Form</h1>
-
-            <form id="multi-step-form">
-                <!-- Step 1: Personal Information -->
-                <div class="form-step active">
-                    <fieldset>
-                        <legend>Personal Information</legend>
-
-                        <div class="floating-label">
-                            <input type="text" id="full-name" name="fullName" required />
-                            <label for="full-name">Full Name: *</label>
-                        </div>
-
-                        <div class="floating-label">
-                            <input type="date" id="dob" name="dob" required />
-                            <label for="dob">Date of Birth: *</label>
-                        </div>
-
-                        <label>Gender:</label>
-                        <div class="gender_form">
-                            <label><input type="radio" name="gender" value="male" required /> Male</label>
-                            <label><input type="radio" name="gender" value="female" required /> Female</label>
-                        </div>
-
-                        <div class="floating-label">
-                            <input type="email" id="email" name="email" required />
-                            <label for="email">Email Address: *</label>
-                        </div>
-
-                        <div class="floating-label">
-                            <input type="tel" id="phone" name="phone" required />
-                            <label for="phone">Phone Number: *</label>
-                        </div>
-
-                        <div class="floating-label">
-                            <input type="text" id="country" name="country" />
-                            <label for="country">Country:</label>
-                        </div>
-
-                        <div class="floating-label">
-                            <input type="text" id="nationality" name="nationality" required />
-                            <label for="nationality">Nationality: *</label>
-                        </div>
-
-                        <div class="floating-label">
-                            <input type="text" id="state" name="state" />
-                            <label for="state">State/Province:</label>
-                        </div>
-
-                        <div class="floating-label">
-                            <input type="text" id="city" name="city" />
-                            <label for="city">City:</label>
-                        </div>
-
-                        <div class="floating-label">
-                            <input type="text" id="postal" name="postalCode" />
-                            <label for="postal">Postal Code:</label>
-                        </div>
-
-                        <div class="floating-label">
-                            <input type="text" id="street" name="streetAddress" />
-                            <label for="street">Address:</label>
-                        </div>
-                    </fieldset>
-                    <button class="form_next" type="button" onclick="nextStep()">Next</button>
-                </div>
-
-               <!-- Step 2: Membership Category and Payment -->
-          <div class="form-step">
+          <h1 style="color: #333;">Membership Form</h1>
+          <form id="single-step-form">
+            <!-- Personal Information -->
+            <fieldset>
+              <legend>Personal Information</legend>
+              <div class="floating-label">
+                <input type="text" id="full-name" name="fullName" required />
+                <label for="full-name">Full Name: *</label>
+              </div>
+              <div class="floating-label">
+                <input type="date" id="dob" name="dob" required />
+                <label for="dob">Date of Birth: *</label>
+              </div>
+              <label>Gender:</label>
+              <div class="gender_form" required>
+                <label><input type="radio" name="gender" value="male" required /> Male</label>
+                <label><input type="radio" name="gender" value="female" required /> Female</label>
+              </div>
+              <div class="floating-label">
+                <input type="email" id="email" name="email" required />
+                <label for="email">Email Address: *</label>
+              </div>
+              <div class="floating-label">
+                <input type="tel" id="phone" name="phone" required />
+                <label for="phone">Phone Number: *</label>
+              </div>
+              <div class="floating-label">
+                <input type="text" id="country" name="country" required />
+                <label for="country">Country:</label>
+              </div>
+              <div class="floating-label">
+                <input type="text" id="nationality" name="nationality" required />
+                <label for="nationality">Nationality: *</label>
+              </div>
+              <div class="floating-label">
+                <input type="text" id="state" name="state" />
+                <label for="state">State/Province:</label>
+              </div>
+              <div class="floating-label">
+                <input type="text" id="city" name="city" />
+                <label for="city">City:</label>
+              </div>
+              <div class="floating-label">
+                <input type="text" id="postal" name="postalCode" />
+                <label for="postal">Postal Code:</label>
+              </div>
+              <div class="floating-label">
+                <input type="text" id="street" name="streetAddress" />
+                <label for="street">Address:</label>
+              </div>
+            </fieldset>
+      
+            <!-- Membership Category and Payment -->
             <fieldset>
               <legend>Membership Category and Fees</legend>
-              <!-- Membership Category Selection -->
               <label>
                 <input type="radio" name="membershipType" value="artisan" required />
                 Artisan — ₹50
@@ -1010,34 +993,17 @@ legend {
                 <input type="radio" name="membershipType" value="student" required />
                 Student — ₹30
               </label>
-
-              <!-- Payment Information -->
-              <div id="payment-section">
-                <button 
-                type="button" 
-                id="rzp-button" 
-                style="
-                    background-color: #3498db; 
-                    color: white; 
-                    padding: 10px 20px; 
-                    border: none; 
-                    border-radius: 5px; 
-                    font-size: 16px; 
-                    cursor: pointer; 
-                    display: inline-flex; 
-                    align-items: center; 
-                    justify-content: center;
-                " 
-                onclick="this.innerHTML='<i class=\'fas fa-spinner fa-spin\'></i> Loading...'"
-            >
-            <i class="fas fa-shopping-cart" style="margin-right: 19px;"></i> Proceed to Payment
-            </button>              </div>
             </fieldset>
-            <button class="form_next" type="button" onclick="previousStep()">Previous</button>
-          </div>
-            </form>
+      
+            <!-- Payment Section -->
+            <div id="payment-section">
+              <button type="button" id="rzp-button" style="background-color: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;" onclick="this.innerHTML='<i class=\'fas fa-spinner fa-spin\'></i> Loading...'">
+                <i class="fas fa-shopping-cart" style="margin-right: 19px;"></i> Proceed to Payment
+              </button>
+            </div>
+          </form>
         </div>
-    </section>
+      </section>
 
         <script src="config.js"></script>
 
@@ -1177,30 +1143,6 @@ async function verifyPayment(paymentData, membershipDetails) {
     }
 }
 
-// Form navigation functions
-function nextStep() {
-    const steps = document.querySelectorAll(".form-step");
-    let currentStep = 0;
-    steps.forEach((step, index) => {
-        if (step.classList.contains("active")) {
-            currentStep = index;
-            step.classList.remove("active");
-        }
-    });
-    steps[currentStep + 1].classList.add("active");
-}
-
-function previousStep() {
-    const steps = document.querySelectorAll(".form-step");
-    let currentStep = 0;
-    steps.forEach((step, index) => {
-        if (step.classList.contains("active")) {
-            currentStep = index;
-            step.classList.remove("active");
-        }
-    });
-    steps[currentStep - 1].classList.add("active");
-}
 </script>
 
 
